@@ -1,0 +1,19 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+                {
+                    "name": "reframeMap",
+                    "category": "M3_map"
+                }
+            ],
+
+            "categories": [
+                {
+                    "name": "M3_map",
+                    "parent": "M3_organisms"
+                }
+            ]
+        }
+    }
+}

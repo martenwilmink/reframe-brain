@@ -1,0 +1,18 @@
+{
+    "package": {
+        "elements": {
+            "snippets": [
+                {
+                    "name": "setBoxTypeTheme",
+                    "category": "M6_theme"
+                }
+            ],
+            "categories": [
+                {
+                    "name": "M6_theme",
+                    "parent": "M6_formulas"
+                }
+            ]
+        }
+    }
+}

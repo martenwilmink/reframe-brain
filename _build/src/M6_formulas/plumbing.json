@@ -1,0 +1,15 @@
+{
+    "package": {
+        "elements": {
+            "snippets": [
+
+            ],
+            "categories": [
+                {
+                    "name": "M6_plumbing",
+                    "parent": "M6_formulas"
+                }
+            ]
+        }
+    }
+}

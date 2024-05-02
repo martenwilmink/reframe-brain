@@ -1,0 +1,16 @@
+{
+    "name": "fractalfarming/reframebrain",
+    "description": "",
+    "minimum-stability": "stable",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "hugopeek",
+            "email": "hugo@fractal-farming.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "seld/jsonlint": "^1.9"
+    }
+}

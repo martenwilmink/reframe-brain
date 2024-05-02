@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "M2_event",
+                    "parent": "M2_molecules"
+                }
+            ]
+        }
+    }
+}

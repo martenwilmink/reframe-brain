@@ -1,0 +1,28 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+                {
+                    "name": "imgOverviewReframe",
+                    "category": "M1_image"
+                },{
+                    "name": "imgOverviewReframeFigure",
+                    "category": "M1_image"
+                },{
+                    "name": "imgOverviewReframeLink",
+                    "category": "M1_image"
+                },{
+                    "name": "imgOverviewReframeFallback",
+                    "category": "M1_image"
+                }
+            ],
+
+            "categories": [
+                {
+                    "name": "M1_image",
+                    "parent": "M1_atoms"
+                }
+            ]
+        }
+    }
+}

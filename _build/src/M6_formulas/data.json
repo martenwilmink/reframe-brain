@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "snippets": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "M6_data",
+                    "parent": "M6_formulas"
+                }
+            ]
+        }
+    }
+}

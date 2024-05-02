@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "G2_map",
+                    "parent": "G2_molecules"
+                }
+            ]
+        }
+    }
+}

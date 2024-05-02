@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "M3_theme",
+                    "parent": "M3_organisms"
+                }
+            ]
+        }
+    }
+}

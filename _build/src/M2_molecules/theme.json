@@ -1,0 +1,22 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+                {
+                    "name": "headAdditional",
+                    "category": "M2_theme"
+                },{
+                    "name": "footerAdditional",
+                    "category": "M2_theme"
+                }
+            ],
+
+            "categories": [
+                {
+                    "name": "M2_theme",
+                    "parent": "M2_molecules"
+                }
+            ]
+        }
+    }
+}

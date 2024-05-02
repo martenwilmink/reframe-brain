@@ -1,0 +1,15 @@
+{
+    "package": {
+        "elements": {
+            "plugins": [
+
+            ],
+            "categories": [
+                {
+                    "name": "M7_connexion",
+                    "parent": "M7_computations"
+                }
+            ]
+        }
+    }
+}

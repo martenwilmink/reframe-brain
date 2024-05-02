@@ -1,0 +1,23 @@
+{
+    "package": {
+        "elements": {
+            "plugins": [
+                {
+                    "name": "ReframeBrainLexicon",
+                    "category": "M7_global",
+                    "events": ["OnHandleRequest"]
+                },{
+                    "name": "ReframeBrainManager",
+                    "category": "M7_global",
+                    "events": ["OnDocFormRender","OnManagerPageBeforeRender","OnManagerPageAfterRender"]
+                }
+            ],
+            "categories": [
+                {
+                    "name": "M7_global",
+                    "parent": "M7_computations"
+                }
+            ]
+        }
+    }
+}

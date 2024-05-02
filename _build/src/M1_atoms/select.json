@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "M1_select",
+                    "parent": "M1_atoms"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,258 @@
+{
+    "name": "ReframeBrain",
+    "lowCaseName": "reframebrain",
+    "description": "Database manager for mapbased storytelling.",
+    "author": "Hugo Peek",
+    "version": "0.1.0",
+    "package": {
+        "elements": {
+            "tvs": [],
+            "chunks": [
+                {
+                    "name": "migxReframeGridImage",
+                    "category": "M1_data"
+                },
+                {
+                    "name": "imgOverviewReframe",
+                    "category": "M1_image"
+                },
+                {
+                    "name": "imgOverviewReframeFigure",
+                    "category": "M1_image"
+                },
+                {
+                    "name": "imgOverviewReframeLink",
+                    "category": "M1_image"
+                },
+                {
+                    "name": "imgOverviewReframeFallback",
+                    "category": "M1_image"
+                },
+                {
+                    "name": "headAdditional",
+                    "category": "M2_theme"
+                },
+                {
+                    "name": "footerAdditional",
+                    "category": "M2_theme"
+                },
+                {
+                    "name": "reframeMap",
+                    "category": "M3_map"
+                }
+            ],
+            "snippets": [
+                {
+                    "name": "setBoxTypeTheme",
+                    "category": "M6_theme"
+                }
+            ],
+            "plugins": [
+                {
+                    "name": "ReframeBrainLexicon",
+                    "category": "M7_global",
+                    "events": [
+                        "OnHandleRequest"
+                    ]
+                },
+                {
+                    "name": "ReframeBrainManager",
+                    "category": "M7_global",
+                    "events": [
+                        "OnDocFormRender",
+                        "OnManagerPageBeforeRender",
+                        "OnManagerPageAfterRender"
+                    ]
+                }
+            ],
+            "templates": [],
+            "categories": [
+                {
+                    "name": "M0_electrons"
+                },
+                {
+                    "name": "M1_atoms"
+                },
+                {
+                    "name": "M2_molecules"
+                },
+                {
+                    "name": "M3_organisms"
+                },
+                {
+                    "name": "M4_templates"
+                },
+                {
+                    "name": "M6_formulas"
+                },
+                {
+                    "name": "M7_computations"
+                },
+                {
+                    "name": "M1_contentblocks",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_data",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_event",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_formblocks",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_global",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_image",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_map",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_select",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M1_theme",
+                    "parent": "M1_atoms"
+                },
+                {
+                    "name": "M2_event",
+                    "parent": "M2_molecules"
+                },
+                {
+                    "name": "G2_map",
+                    "parent": "G2_molecules"
+                },
+                {
+                    "name": "G2_overview",
+                    "parent": "G2_molecules"
+                },
+                {
+                    "name": "M2_theme",
+                    "parent": "M2_molecules"
+                },
+                {
+                    "name": "M3_event",
+                    "parent": "M3_organisms"
+                },
+                {
+                    "name": "M3_map",
+                    "parent": "M3_organisms"
+                },
+                {
+                    "name": "M3_overview",
+                    "parent": "M3_organisms"
+                },
+                {
+                    "name": "M3_theme",
+                    "parent": "M3_organisms"
+                },
+                {
+                    "name": "M4_reframe",
+                    "parent": "M4_templates"
+                },
+                {
+                    "name": "M4_theme",
+                    "parent": "M4_templates"
+                },
+                {
+                    "name": "M6_data",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_form",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_import",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_map",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_overview",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_plumbing",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_presentation",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M6_theme",
+                    "parent": "M6_formulas"
+                },
+                {
+                    "name": "M7_connexion",
+                    "parent": "M7_computations"
+                },
+                {
+                    "name": "M7_data",
+                    "parent": "M7_computations"
+                },
+                {
+                    "name": "M7_global",
+                    "parent": "M7_computations"
+                }
+            ]
+        },
+        "systemSettings": [],
+        "menus": [
+            {
+                "text": "Reframe",
+                "description": "",
+                "action": "",
+                "namespace": "",
+                "parent": "topnav",
+                "icon": "<i class=\"icon icon-leaf\"><\/i>",
+                "menuIndex": 5,
+                "params": "",
+                "handler": ""
+            },
+            {
+                "text": "reframebrain.menu.clear_cache_maps_title",
+                "description": "reframebrain.menu.clear_cache_maps_description",
+                "action": "",
+                "namespace": "romanescobackyard",
+                "parent": "romanesco.menu.clear_cache_all_title",
+                "icon": "",
+                "menuIndex": 99,
+                "params": "",
+                "handler": "var partition = 'custom\/maps';\nvar topic = '\/getcache\/cache\/partition\/refresh\/' + partition;\n\nthis.console = MODx.load({\n    xtype: 'modx-console',\n    register: 'mgr',\n    topic: topic,\n    show_filename: 0\n});\n\nthis.console.show(Ext.getBody());\n\nMODx.Ajax.request({\n    url: MODx.config.assets_url + 'components\/getcache\/connector.php',\n    params: {\n        action: 'cache\/partition\/refresh',\n        partitions: partition,\n        register: 'mgr',\n        topic: topic\n    },\n    listeners: {\n        'success': {\n            fn: function () {\n                this.console.fireEvent('complete');\n            }, scope: this\n        }\n    }\n});\n\nreturn false;",
+                "permissions": "empty_cache"
+            }
+        ]
+    },
+    "database": {
+        "tables": []
+    },
+    "extensionPackage": [],
+    "build": {
+        "readme": "docs\/readme.md",
+        "license": "docs\/license.md",
+        "changelog": "docs\/changelog.md",
+        "options": {
+            "composer": true
+        },
+        "resolver": {
+            "after": [
+                "composer.php",
+                "synctables.php"
+            ]
+        }
+    }
+}

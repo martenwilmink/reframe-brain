@@ -1,0 +1,140 @@
+# Don't build with force!
+data_directory: ../../../_reframe/
+backup_directory: ../../../_backup/reframe/
+
+data:
+    #reframebrain_organizations:
+    #    class: reframeOrganization
+    #    primary: id
+    #    exclude_keys:
+    #        - editedby
+    #        - editedon
+    #    package: reframebrain
+
+    # EarthBrain
+    earthbrain_addresses:
+        class: earthAddress
+        primary: id
+        exclude_keys:
+            - editedby
+            - editedon
+        package: earthbrain
+    earthbrain_locations:
+        class: earthLocation
+        primary: id
+        exclude_keys:
+            - editedby
+            - editedon
+    earthbrain_people:
+        class: earthPersonData
+        primary: person_id
+    earthbrain_images:
+        class: earthImage
+        primary: id
+    earthbrain_notes:
+        class: earthNote
+        primary: id
+    earthbrain_links:
+        class: earthLink
+        primary: id
+
+    # MODX
+    member_groups:
+        class: modUserGroupMember
+        primary: id
+    user_attributes:
+        class: modUserProfile
+        primary: id
+        exclude_keys:
+            - blockeduntil
+            - blockedafter
+            - logincount
+            - lastlogin
+            - thislogin
+            - failedlogincount
+            - sessionid
+    user_settings:
+        class: modUserSetting
+        primary:
+            - user
+            - key
+        exclude_keys:
+            - editedon
+    users:
+        class: modUser
+        primary:
+            - id
+            - username
+        exclude_keys:
+            - password
+            - cachepwd
+            - hash_class
+            - salt
+            - session_stale
+
+    # Agenda
+    #agenda_events:
+    #    class: AgendaEvents
+    #    primary:
+    #        - id
+    #        - title
+    #    package: agenda
+    #agenda_event_dates:
+    #    class: AgendaEventDates
+    #    primary:
+    #        - id
+    #        - event_id
+    #agenda_locations:
+    #    class: AgendaLocations
+    #    primary:
+    #        - id
+    #        - name
+    #agenda_event_images:
+    #    class: AgendaEventImages
+    #    primary:
+    #        - id
+    #        - event_id
+    #agenda_event_videos:
+    #    class: AgendaEventVideos
+    #    primary:
+    #        - id
+    #        - event_id
+    #agenda_event_categories:
+    #    class: AgendaEventCategories
+    #    primary:
+    #        - id
+    #        - event_id
+    #agenda_categories:
+    #    class: AgendaCategories
+    #    primary:
+    #        - id
+    #        - name
+    #agenda_calendars:
+    #    class: AgendaCalendars
+    #    primary:
+    #        - id
+    #        - name
+    #agenda_feeds:
+    #    class: AgendaFeeds
+    #    primary:
+    #        - id
+    #agenda_feed_categories:
+    #    class: AgendaFeedCategories
+    #    primary:
+    #        - id
+    #        - feed_id
+    #agenda_event_users:
+    #    class: AgendaEventUsers
+    #    primary:
+    #        - id
+    #        - event_id
+    #agenda_event_usergroups:
+    #    class: AgendaEventUsergroups
+    #    primary:
+    #        - id
+    #        - event_id
+    #agenda_event_user_participation:
+    #    class: AgendaEventUserParticipation
+    #    primary:
+    #        - id
+    #        - event_id

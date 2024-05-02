@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "M1_contentblocks",
+                    "parent": "M1_atoms"
+                }
+            ]
+        }
+    }
+}

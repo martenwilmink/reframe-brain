@@ -1,0 +1,16 @@
+{
+    "package": {
+        "elements": {
+            "templates": [
+
+            ],
+
+            "categories": [
+                {
+                    "name": "M4_theme",
+                    "parent": "M4_templates"
+                }
+            ]
+        }
+    }
+}

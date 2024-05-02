@@ -1,0 +1,19 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+                {
+                    "name": "migxReframeGridImage",
+                    "category": "M1_data"
+                }
+            ],
+
+            "categories": [
+                {
+                    "name": "M1_data",
+                    "parent": "M1_atoms"
+                }
+            ]
+        }
+    }
+}
