@@ -7,8 +7,8 @@
 
             "categories": [
                 {
-                    "name": "G2_overview",
-                    "parent": "G2_molecules"
+                    "name": "M2_overview",
+                    "parent": "M2_molecules"
                 }
             ]
         }

@@ -29,6 +29,10 @@
                     "category": "M1_image"
                 },
                 {
+                    "name": "reframeMapLayerJS",
+                    "category": "M2_map"
+                },
+                {
                     "name": "headAdditional",
                     "category": "M2_theme"
                 },
@@ -129,12 +133,12 @@
                     "parent": "M2_molecules"
                 },
                 {
-                    "name": "G2_map",
-                    "parent": "G2_molecules"
+                    "name": "M2_map",
+                    "parent": "M2_molecules"
                 },
                 {
-                    "name": "G2_overview",
-                    "parent": "G2_molecules"
+                    "name": "M2_overview",
+                    "parent": "M2_molecules"
                 },
                 {
                     "name": "M2_theme",
