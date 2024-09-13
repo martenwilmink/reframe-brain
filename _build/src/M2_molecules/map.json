@@ -2,13 +2,16 @@
     "package": {
         "elements": {
             "chunks": [
-
+                {
+                    "name": "reframeMapLayerJS",
+                    "category": "M2_map"
+                }
             ],
 
             "categories": [
                 {
-                    "name": "G2_map",
-                    "parent": "G2_molecules"
+                    "name": "M2_map",
+                    "parent": "M2_molecules"
                 }
             ]
         }
