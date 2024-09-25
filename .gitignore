@@ -10,3 +10,5 @@ _data/
 
 assets/components/*/vendor/
 core/components/*/vendor/
+
+.idea/
