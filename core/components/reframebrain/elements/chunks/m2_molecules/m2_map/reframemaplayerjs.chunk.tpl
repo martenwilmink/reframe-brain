@@ -1,5 +1,7 @@
-let geoJson[[+layer_title]] = [[+layer_geojson:empty=`[]`]];
-let [[+layer_title:lcase]]Layer = L.geoJson(geoJson[[+layer_title]], {
+[[+layer_title:replace=` ==`:toPlaceholder=`title_[[+idx]]`]]
+
+let geoJson[[+title_[[+idx]]]] = [[+layer_geojson:empty=`[]`]];
+let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
     pointToLayer: function(feature, latlng) {
         return L.marker(latlng);
     },
@@ -8,14 +10,14 @@ let [[+layer_title:lcase]]Layer = L.geoJson(geoJson[[+layer_title]], {
     `]]
 });
 
-mapLayers[ "[[+layer_title]]" ] = [[+layer_title:lcase]]Layer;
+mapLayers[ "[[+layer_title]]" ] = [[+title_[[+idx]]]]Layer;
 
 [[+show_on_load:eq=`1`:then=`
-markers.addLayer([[+layer_title:lcase]]Layer);
+markers.addLayer([[+title_[[+idx]]]]Layer);
 `:else=`
-markers.checkIn([[+layer_title:lcase]]Layer);
+markers.checkIn([[+title_[[+idx]]]]Layer);
 `]]
 
 [[+idx:eq=`1`:then=`
-primaryLayer = [[+layer_title:lcase]]Layer;
+primaryLayer = [[+title_[[+idx]]]]Layer;
 `]]
