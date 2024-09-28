@@ -52,10 +52,19 @@
         let primaryLayer = '';
         let markersById = [];
 
-        // Load map
+        // Create map
         const map = new L.Map('[[+map_id]]', {
             scrollWheelZoom: false,
             layers: [tiles[[+default_layer]]]
+        });
+
+        // Add parent group for clustered markers
+        // https://github.com/Leaflet/Leaflet.markercluster
+        // https://github.com/ghybs/Leaflet.MarkerCluster.LayerSupport
+        let markers = L.markerClusterGroup.layerSupport({
+            maxClusterRadius: 50,
+            singleMarkerMode: false,
+            disableClusteringAtZoom: 10
         });
 
         // Load layers with GeoJSON data
@@ -63,6 +72,9 @@
 
         // Add selector to switch between layers
         L.control.layers(tileLayers, mapLayers).addTo(map);
+
+        // Add all layers to map
+        map.addLayer(markers);
 
         // Adjust map boundaries to first layer
         map.fitBounds(primaryLayer.getBounds(), {

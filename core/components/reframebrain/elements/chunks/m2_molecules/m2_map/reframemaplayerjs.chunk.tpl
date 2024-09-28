@@ -10,17 +10,12 @@ let [[+layer_title:lcase]]Layer = L.geoJson(geoJson[[+layer_title]], {
 
 mapLayers[ "[[+layer_title]]" ] = [[+layer_title:lcase]]Layer;
 
-let [[+layer_title]]Markers = L.markerClusterGroup({
-    maxClusterRadius: 50,
-    singleMarkerMode: false,
-    disableClusteringAtZoom: 10
-});
-
 [[+show_on_load:eq=`1`:then=`
-[[+layer_title]]Markers.addLayer([[+layer_title:lcase]]Layer);
+markers.addLayer([[+layer_title:lcase]]Layer);
+`:else=`
+markers.checkIn([[+layer_title:lcase]]Layer);
 `]]
+
 [[+idx:eq=`1`:then=`
 primaryLayer = [[+layer_title:lcase]]Layer;
 `]]
-
-map.addLayer([[+layer_title]]Markers);
