@@ -30,6 +30,20 @@
 
             if (feature.properties && feature.properties.popupContent) {
                 popupContent = feature.properties.popupContent;
+            } else if (feature.properties && feature.properties.MINE_NAME) {
+                // Mining sites
+                popupContent =
+                    "<strong>" + feature.properties.MINE_NAME + "</strong><br>" +
+                    "<em>" + feature.properties.COMMODITY + "</em><br>" +
+                    "<p>" + feature.properties.DEV_STAGE + "</p>"
+                ;
+            } else if (feature.properties && feature.properties.LITHOLOGY1) {
+                // Mineral showings
+                popupContent =
+                    "<strong>" + feature.properties.NAME + "</strong><br>" +
+                    "<em>" + feature.properties.ACOMMODITY + "</em><br>" +
+                    "<p>" + feature.properties.DEV_STAGE + "</p>"
+                ;
             } else {
                 popupContent = feature.properties.name;
             }
