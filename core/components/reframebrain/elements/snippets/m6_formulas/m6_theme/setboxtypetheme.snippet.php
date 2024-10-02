@@ -12,8 +12,6 @@ switch($input) {
         $column_type = "card";
         $grid_settings = "";
         break;
-    default:
-        return [];
 }
 
 if ($box_type) return [
