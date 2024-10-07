@@ -1,7 +1,7 @@
 {
     "name": "ReframeBrain",
     "lowCaseName": "reframebrain",
-    "description": "Database manager for mapbased storytelling.",
+    "description": "Database manager for map-based storytelling.",
     "author": "Hugo Peek",
     "version": "0.1.0",
     "package": {
@@ -43,9 +43,19 @@
                 "action": "",
                 "namespace": "",
                 "parent": "topnav",
-                "icon": "<i class=\"icon icon-leaf\"></i>",
+                "icon": "<i class=\"icon icon-film\"></i>",
                 "menuIndex": 5,
                 "params": "",
+                "handler": ""
+            },{
+                "text": "Stories",
+                "description": "",
+                "action": "index",
+                "namespace": "migx",
+                "parent": "Reframe",
+                "icon": "",
+                "menuIndex": 30,
+                "params": "&configs=reframe_stories:reframebrain||reframe_places:reframebrain",
                 "handler": ""
             },{
                 "text": "reframebrain.menu.clear_cache_maps_title",
@@ -63,7 +73,9 @@
     },
     "database": {
         "tables": [
-
+            "reframeStory",
+            "reframeStoryPlace",
+            "reframePlace"
         ]
     },
     "extensionPackage": {},

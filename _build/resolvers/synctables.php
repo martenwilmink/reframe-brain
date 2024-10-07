@@ -111,13 +111,9 @@ if ($object->xpdo) {
             $modx =& $object->xpdo;
 
             $tables = [
-                "reframeNeed",
-                "reframeOffer",
-                "reframeMatch",
-                "reframeOrganization",
-                "reframeNetwork",
-                "reframeNetworkNode",
-                "reframeNode"
+                "reframeStory",
+                "reframeStoryPlace",
+                "reframePlace"
             ];
 
             $modelPath = $modx->getOption('romanescobackyard.core_path', null, $modx->getOption('core_path') . 'components/romanescobackyard/') . 'model/';

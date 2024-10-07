@@ -1,4 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="reframebrain" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="ReframeBrain" version="1.1">
 
+    <!-- Stories
+
+         A Story is a collection of Places. It uses a junction table, because a
+         place can be part of multiple stories.
+    -->
+    <object class="reframeStory" table="reframe_stories" extends="xPDOSimpleObject">
+        <field key="resource_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="" />
+        <field key="category" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+
+        <field key="createdon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+        <field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="editedon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+        <field key="editedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
+
+        <index alias="resource_id" name="resource_id" primary="false" unique="TRUE" type="BTREE">
+            <column key="resource_id" length="" collation="A" null="false"/>
+        </index>
+        <index alias="category" name="category" primary="false" unique="false" type="BTREE">
+            <column key="category" length="" collation="A" null="false"/>
+        </index>
+        <index alias="createdby" name="createdby" primary="false" unique="false" type="BTREE">
+            <column key="createdby" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Places" class="reframeStoryPlace" local="id" foreign="story_id" cardinality="many" owner="local" />
+
+        <aggregate alias="Resource" class="modResource" local="resource_id" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <!-- Places
+
+         - Each Place represents a physical location within a Story.
+         - Places can be imported from an existing dataset, or added manually.
+         - Different relationships and experiences with this place are contained
+           inside the storybook chapters, and potentially inside the Images,
+           Links and Notes objects too.
+    -->
+    <object class="reframePlace" table="reframe_places" extends="xPDOSimpleObject" inherit="single">
+        <field key="address_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+        <field key="location_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+        <field key="image_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+
+        <field key="title" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="description" dbtype="text" phptype="string" null="false" default="" />
+
+        <field key="createdon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+        <field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="editedon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+        <field key="editedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1" />
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
+
+        <alias key="public" field="published" />
+
+        <index alias="address_id" name="address_id" primary="false" unique="false" type="BTREE">
+            <column key="address_id" length="" collation="A" null="true"/>
+        </index>
+        <index alias="location_id" name="location_id" primary="false" unique="false" type="BTREE">
+            <column key="location_id" length="" collation="A" null="true"/>
+        </index>
+        <index alias="createdby" name="createdby" primary="false" unique="false" type="BTREE">
+            <column key="createdby" length="" collation="A" null="false"/>
+        </index>
+        <index alias="published" name="published" primary="false" unique="false" type="BTREE">
+            <column key="published" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Stories" class="reframeStoryPlace" local="id" foreign="place_id" cardinality="many" owner="local" />
+        <composite alias="Image" class="reframeImagePlace" local="image_id" foreign="id" cardinality="one" owner="foreign" />
+        <composite alias="Images" class="reframeImagePlace" local="id" foreign="parent_id" cardinality="many" owner="local" />
+        <composite alias="Links" class="reframeLinkPlace" local="id" foreign="parent_id" cardinality="many" owner="local" />
+        <composite alias="Notes" class="reframeNotePlace" local="id" foreign="parent_id" cardinality="many" owner="local" />
+
+        <composite alias="Address" class="earthAddress" local="address_id" foreign="id" cardinality="one" owner="foreign" />
+        <composite alias="Location" class="earthLocation" local="location_id" foreign="id" cardinality="one" owner="foreign" />
+
+        <aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <!-- Junction table -->
+    <object class="reframeStoryPlace" table="reframe_stories_places" extends="xPDOSimpleObject">
+        <field key="story_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="" />
+        <field key="place_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="" />
+
+        <index alias="story_place" name="story_place" primary="false" unique="true" type="BTREE">
+            <column key="story_id" length="" collation="A" null="false" />
+            <column key="place_id" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="Story" class="reframeStory" local="story_id" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Place" class="reframePlace" local="place_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <!-- Extended EarthBrain classes -->
+    <object class="reframeImagePlace" extends="earthImage">
+        <aggregate alias="Place" class="reframePlace" local="parent_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+    <object class="reframeLinkPlace" extends="earthLink">
+        <aggregate alias="Place" class="reframePlace" local="parent_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+    <object class="reframeNotePlace" extends="earthNote">
+        <aggregate alias="Place" class="reframePlace" local="parent_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
 </model>
