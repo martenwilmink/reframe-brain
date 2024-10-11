@@ -44,6 +44,12 @@
                     "<em>" + feature.properties.ACOMMODITY + "</em><br>" +
                     "<p>" + feature.properties.DEV_STAGE + "</p>"
                 ;
+            } else if (feature.properties && feature.properties.FEATURE_NA) {
+                // Tlicho communities
+                popupContent =
+                    "<strong>" + feature.properties.FEATURE_NA + "</strong><br>" +
+                    "<em>" + feature.properties.GENERIC_TE + "</em>"
+                ;
             } else {
                 popupContent = feature.properties.name;
             }
