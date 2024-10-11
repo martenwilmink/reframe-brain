@@ -5,6 +5,16 @@ let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
     pointToLayer: function(feature, latlng) {
         return L.marker(latlng);
     },
+    style: function() {
+        return {
+            color: '[[+layer_color:stripString=`#fafafa`:default=`#3388ff`]]',
+            weight: [[+line_weight:default=`3`]],
+            fill: [[+layer_fill:default=`false`]],
+            dashArray: [[+line_dash:default=`null`:prepend=`'`:append=`'`]],
+            //opacity: 0.5,
+            //fillRule: 'nonzero'
+        }
+    },
     [[+marker_popup:eq=`1`:then=`
     onEachFeature: addPopup
     `]]
