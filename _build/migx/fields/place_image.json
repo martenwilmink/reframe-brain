@@ -1,0 +1,19 @@
+{
+    "MIGX_id": "",
+    "field": "image_id",
+    "caption": "Cover image",
+    "description": "",
+    "description_is_code": "0",
+    "inputTV": "",
+    "inputTVtype": "listbox",
+    "validation": "",
+    "configs": "",
+    "restrictive_condition": "[[If? &subject=`[[+createdon]]` &operator=`empty` &then=`break`]]",
+    "display": "",
+    "sourceFrom": "config",
+    "sources": "",
+    "inputOptionValues": "@CHUNK tvSelectEarthOption@PlaceImage",
+    "default": "",
+    "useDefaultIfEmpty": "0",
+    "pos": ""
+}

@@ -47,6 +47,22 @@
             ],
             "snippets": [
                 {
+                    "name": "migxSaveReframeStory",
+                    "category": "M6_data"
+                },
+                {
+                    "name": "migxSaveReframePlace",
+                    "category": "M6_data"
+                },
+                {
+                    "name": "migxSaveReframeStoryPlace",
+                    "category": "M6_data"
+                },
+                {
+                    "name": "migxVerifyReframeStoryPlace",
+                    "category": "M6_data"
+                },
+                {
                     "name": "setBoxTypeTheme",
                     "category": "M6_theme"
                 }
