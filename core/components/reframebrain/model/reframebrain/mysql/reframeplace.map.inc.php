@@ -19,6 +19,8 @@ $xpdo_meta_map['reframePlace']= array (
     'image_id' => NULL,
     'title' => '',
     'description' => '',
+    'icon' => '',
+    'color' => '',
     'createdon' => 0,
     'createdby' => 0,
     'editedon' => 0,
@@ -63,6 +65,22 @@ $xpdo_meta_map['reframePlace']= array (
     'description' => 
     array (
       'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'icon' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'color' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
       'phptype' => 'string',
       'null' => false,
       'default' => '',
