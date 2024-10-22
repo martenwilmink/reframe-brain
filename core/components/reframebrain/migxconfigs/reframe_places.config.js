@@ -799,15 +799,6 @@
                 "alias": "Location"
             },
             {
-                "alias": "Person"
-            },
-            {
-                "alias": "PersonData"
-            },
-            {
-                "alias": "UserData"
-            },
-            {
                 "alias": "Image"
             }
         ],
