@@ -275,7 +275,10 @@
             "reframePlace"
         ]
     },
-    "extensionPackage": [],
+    "extensionPackage": {
+        "serviceName": "reframebrain",
+        "serviceClass": "ReframeBrain"
+    },
     "build": {
         "readme": "docs\/readme.md",
         "license": "docs\/license.md",
