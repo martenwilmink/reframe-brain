@@ -3,13 +3,25 @@ data_directory: ../../../_reframe/
 backup_directory: ../../../_backup/reframe/
 
 data:
-    #reframebrain_organizations:
-    #    class: reframeOrganization
-    #    primary: id
-    #    exclude_keys:
-    #        - editedby
-    #        - editedon
-    #    package: reframebrain
+    reframebrain_stories:
+        class: reframeStory
+        primary: id
+        exclude_keys:
+            - editedby
+            - editedon
+        package: reframebrain
+    reframebrain_places:
+        class: reframePlace
+        primary: id
+        exclude_keys:
+            - editedby
+            - editedon
+    reframebrain_stories_places:
+        class: reframeStoryPlace
+        primary: id
+        exclude_keys:
+            - editedby
+            - editedon
 
     # EarthBrain
     earthbrain_addresses:
