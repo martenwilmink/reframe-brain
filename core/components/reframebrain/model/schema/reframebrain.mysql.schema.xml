@@ -6,7 +6,7 @@
          A Story is a collection of Places. It uses a junction table, because a
          place can be part of multiple stories.
     -->
-    <object class="reframeStory" table="reframe_stories" extends="xPDOSimpleObject">
+    <object class="reframeStory" table="reframebrain_stories" extends="xPDOSimpleObject">
         <field key="resource_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="" />
         <field key="category" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
 
@@ -41,7 +41,7 @@
            inside the storybook chapters, and potentially inside the Images,
            Links and Notes objects too.
     -->
-    <object class="reframePlace" table="reframe_places" extends="xPDOSimpleObject" inherit="single">
+    <object class="reframePlace" table="reframebrain_places" extends="xPDOSimpleObject" inherit="single">
         <field key="address_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
         <field key="location_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
         <field key="image_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
@@ -87,7 +87,7 @@
     </object>
 
     <!-- Junction table -->
-    <object class="reframeStoryPlace" table="reframe_stories_places" extends="xPDOSimpleObject">
+    <object class="reframeStoryPlace" table="reframebrain_stories_places" extends="xPDOSimpleObject">
         <field key="story_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="" />
         <field key="place_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="" />
 

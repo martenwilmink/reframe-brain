@@ -5,7 +5,7 @@
 $xpdo_meta_map['reframePlace']= array (
   'package' => 'reframebrain',
   'version' => '1.1',
-  'table' => 'reframe_places',
+  'table' => 'reframebrain_places',
   'extends' => 'xPDOSimpleObject',
   'inherit' => 'single',
   'tableMeta' => 
