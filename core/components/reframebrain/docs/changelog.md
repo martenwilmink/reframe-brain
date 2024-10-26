@@ -4,6 +4,7 @@
 Released on ...
 
 New features:
+- Add ReframeBrain namespace and base class
 - Add database tables for Stories and Places
 - Add ability to cluster markers on map
 - Add templates for GitHub bug report and feature request

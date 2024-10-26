@@ -68,8 +68,16 @@ class ReframeBrain
 
         // Additional MIGX properties for EarthBrain class
         $earthbrain->addMigxProperties([
+            'reframe_stories:reframebrain' => [
+                'category' => 'story',
+            ],
             'reframe_places:reframebrain' => [
                 'category' => 'place',
+                'classKeys' => [
+                    'image' => 'reframeImagePlace',
+                    'note' => 'reframeNotePlace',
+                    'link' => 'reframeLinkPlace',
+                ],
             ],
         ]);
     }
