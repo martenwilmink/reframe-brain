@@ -116,8 +116,8 @@ if ($object->xpdo) {
                 "reframePlace"
             ];
 
-            $modelPath = $modx->getOption('romanescobackyard.core_path', null, $modx->getOption('core_path') . 'components/romanescobackyard/') . 'model/';
-            $modx->addPackage('romanescobackyard', $modelPath);
+            $modelPath = $modx->getOption('reframebrain.core_path', null, $modx->getOption('core_path') . 'components/reframebrain/') . 'model/';
+            $modx->addPackage('reframebrain', $modelPath);
 
             foreach ($tables as $table) {
                 $modx->log(modX::LOG_LEVEL_INFO, 'Altering table: ' . $table);
