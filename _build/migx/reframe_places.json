@@ -405,7 +405,7 @@
             "renderer": "this.renderChunk",
             "clickaction": "",
             "selectorconfig": "",
-            "renderchunktpl": "[[+Location_lat:notempty=`<i class=\"right icon icon-fw icon-map-marker\" title=\"Has coordinates\" style=\"margin-top:4px;\"></i>`]][[+Address_locality:append=`[[+Address_region:notempty=`<br>`]]`]][[+Address_region]]",
+            "renderchunktpl": "[[+Location_lat:notempty=`<i class=\"right icon icon-fw icon-map-marker\" title=\"[[+Location_lat]], [[+Location_lng]]\" style=\"margin-top:4px;\"></i>`]][[+Address_locality:append=`[[+Address_region:notempty=`<br>`]]`]][[+Address_region]]",
             "renderoptions": "",
             "editor": ""
         },
