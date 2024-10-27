@@ -46,8 +46,8 @@
                 },
                 {
                     "MIGX_id": "",
-                    "field": "title",
-                    "caption": "Title",
+                    "field": "name",
+                    "caption": "Name",
                     "description": "",
                     "description_is_code": "0",
                     "inputTV": "",
@@ -336,8 +336,8 @@
         },
         {
             "MIGX_id": "",
-            "header": "Title",
-            "dataIndex": "title",
+            "header": "Name",
+            "dataIndex": "name",
             "width": 80,
             "sortable": false,
             "show_in_grid": 1,

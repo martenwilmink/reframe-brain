@@ -46,7 +46,7 @@
         <field key="location_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
         <field key="image_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
 
-        <field key="title" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="name" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
         <field key="description" dbtype="text" phptype="string" null="false" default="" />
         <field key="icon" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
         <field key="color" dbtype="varchar" precision="191" phptype="string" null="false" default="" />

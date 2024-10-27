@@ -46,8 +46,8 @@
                 },
                 {
                     "MIGX_id": "",
-                    "field": "title",
-                    "caption": "Title",
+                    "field": "name",
+                    "caption": "Name",
                     "description": "",
                     "description_is_code": "0",
                     "inputTV": "",
@@ -525,7 +525,7 @@
                 {
                     "MIGX_id": "",
                     "field": "Location_geojson",
-                    "caption": "Features (GeoJSON)",
+                    "caption": "GeoJSON features",
                     "description": "A JSON object for displaying slightly more complex spatial data, such as a polygon for defining an area or a circle for specifying the radius of a tree. You can group multiple GeoJSON features together in a FeatureCollection, allowing you to add a variety of objects. To make it easier to create and edit this data, you can copy\/paste the code in an online editor like https:\/\/geojson.io\/.",
                     "description_is_code": "0",
                     "inputTV": "",
@@ -544,7 +544,7 @@
                 {
                     "MIGX_id": "",
                     "field": "Location_kml",
-                    "caption": "Features (KML)",
+                    "caption": "KML features",
                     "description": "WIP. An XML object for displaying complex spatial data.",
                     "description_is_code": "0",
                     "inputTV": "",
@@ -836,8 +836,8 @@
         },
         {
             "MIGX_id": "",
-            "header": "Title",
-            "dataIndex": "title",
+            "header": "Name",
+            "dataIndex": "name",
             "width": 80,
             "sortable": false,
             "show_in_grid": 1,

@@ -17,7 +17,7 @@ $xpdo_meta_map['reframePlace']= array (
     'address_id' => NULL,
     'location_id' => NULL,
     'image_id' => NULL,
-    'title' => '',
+    'name' => '',
     'description' => '',
     'icon' => '',
     'color' => '',
@@ -54,7 +54,7 @@ $xpdo_meta_map['reframePlace']= array (
       'phptype' => 'integer',
       'null' => true,
     ),
-    'title' => 
+    'name' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '191',
