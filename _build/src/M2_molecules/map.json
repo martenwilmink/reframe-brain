@@ -5,6 +5,9 @@
                 {
                     "name": "reframeMapLayerJS",
                     "category": "M2_map"
+                },{
+                    "name": "reframeStoryMapChapterJS",
+                    "category": "M2_map"
                 }
             ],
 

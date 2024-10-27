@@ -9,6 +9,11 @@
         &then=`$headTheme`
         &else=`$head`
     ]]]]
+    <style>
+        .ui.vertical.stripe.segment.white {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
 </head>
 
 <body id="[[*alias]]" class="overview storymap">
@@ -63,24 +68,28 @@
 
                 // Create map
                 const map = new L.Map('storymap', {
-                    center: [62.820465286717898, -116.024615364519192],
-                    zoom: 11,
-                    scrollWheelZoom: false,
+                    center: [64.111875, -117.320659],
+                    zoom: 8,
+                    scrollWheelZoom: true,
                     layers: [tilesTerrain]
                 });
 
                 // Load layers with GeoJSON data
-                L.marker([62.820465286717898, -116.024615364519192]).addTo(map);
-                L.marker([62.820465286717898, -116.024615364519192]).addTo(map);
-                L.marker([62.820465286717898, -116.024615364519192]).addTo(map);
-                L.marker([62.820465286717898, -116.024615364519192]).addTo(map);
+                [[migxLoopCollection?
+                    &packageName=`reframebrain`
+                    &classname=`reframePlace`
+                    &where=`[{"id:IN":[ 1,2,3,4 ]}]`
+                    &joins=`[{"alias": "Location"}]`
+                    &tpl=`reframeStoryMapChapterJS`
+                ]]
 
                 // Add all layers to map
                 //map.addLayer(mapLayers);
 
                 // Adjust map boundaries to first layer
-                map.fitBounds(primaryLayer.getBounds(), {
-                    padding: [50, 50]
+                map.fitBounds(map.getBounds(), {
+                    paddingTopLeft: [300, 50],
+                    paddingBottomRight: [50, 200],
                 });
 
                 // Only activate mousewheel scrolling on focus
@@ -100,7 +109,7 @@
         </article>
 
         [[*neighbors_visibility:eq=`1`:then=`
-        <nav id="menu-neighbors" class="ui large fluid two item menu">
+        <nav id="menu-neighbors" class="ui large fluid two item fitted segment menu">
             [[pdoNeighbors?
                 &loop=`1`
                 &tplPrev=`neighborNavItemPrev`
