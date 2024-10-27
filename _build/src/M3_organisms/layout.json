@@ -1,0 +1,19 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+                {
+                    "name": "reframeStoryMapChapter",
+                    "category": "M3_layout"
+                }
+            ],
+
+            "categories": [
+                {
+                    "name": "M3_layout",
+                    "parent": "M3_organisms"
+                }
+            ]
+        }
+    }
+}

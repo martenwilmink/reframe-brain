@@ -41,6 +41,10 @@
                     "category": "M2_theme"
                 },
                 {
+                    "name": "reframeStoryMapChapter",
+                    "category": "M3_layout"
+                },
+                {
                     "name": "reframeMap",
                     "category": "M3_map"
                 }
@@ -85,7 +89,25 @@
                     ]
                 }
             ],
-            "templates": [],
+            "templates": [
+                {
+                    "name": "ReframeStoryMap",
+                    "description": "",
+                    "file": "storymap.template.tpl",
+                    "icon": "icon-map-o",
+                    "properties": [
+                        {
+                            "name": "elementStatus",
+                            "value": "solid"
+                        },
+                        {
+                            "name": "elementPreview",
+                            "value": ""
+                        }
+                    ],
+                    "category": "M4_reframe"
+                }
+            ],
             "categories": [
                 {
                     "name": "M0_electrons"
@@ -162,6 +184,10 @@
                 },
                 {
                     "name": "M3_event",
+                    "parent": "M3_organisms"
+                },
+                {
+                    "name": "M3_layout",
                     "parent": "M3_organisms"
                 },
                 {

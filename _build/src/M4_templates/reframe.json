@@ -2,7 +2,22 @@
     "package": {
         "elements": {
             "templates": [
-
+                {
+                    "name": "ReframeStoryMap",
+                    "description": "",
+                    "file": "storymap.template.tpl",
+                    "icon": "icon-map-o",
+                    "properties": [
+                        {
+                            "name": "elementStatus",
+                            "value": "solid"
+                        },{
+                            "name": "elementPreview",
+                            "value": ""
+                        }
+                    ],
+                    "category": "M4_reframe"
+                }
             ],
 
             "categories": [

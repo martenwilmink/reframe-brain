@@ -4,6 +4,7 @@
 Released on ...
 
 New features:
+- Add StoryBook functionality
 - Add ReframeBrain namespace and base class
 - Add database tables for Stories and Places
 - Add ability to cluster markers on map
