@@ -91,6 +91,25 @@
                 // Load markers with Places
                 [[+rows]]
 
+                // Load additional map layers
+                let geoJsonTlichoBoundary = [[$geoJSON_tlicho_boundary:strip]];
+                let geoJsonTlichoBoundaryLayer = L.geoJson(geoJsonTlichoBoundary, {
+                    style: function() {
+                        return {
+                            color: '#3388ff',
+                            weight: 2,
+                            fill: false,
+                            dashArray: '0 3',
+                        }
+                    }
+                });
+                mapLayers[ "Tlicho boundary" ] = geoJsonTlichoBoundaryLayer;
+
+                // Add selector to switch between layers
+                let layerControl = L.control.layers(tileLayers, mapLayers, {
+                    position: 'bottomright'
+                }).addTo(map);
+
                 // Add all layers to map
                 //map.addLayer(mapLayers);
 
