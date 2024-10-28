@@ -11,7 +11,11 @@
     ]]]]
     <style>
         .ui.vertical.stripe.segment.white {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: background-color .3s ease-in-out;
+        }
+        .ui.vertical.stripe.segment.white.active {
+            background-color: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
@@ -117,6 +121,16 @@
                 map.fitBounds(map.getBounds(), {
                     paddingTopLeft: [300, 50],
                     paddingBottomRight: [50, 200],
+                });
+
+                // Scrollytelling
+                $('#chapter-0').visibility({
+                    once: false,
+                    onBottomVisible: function () {
+                        map.flyToBounds(geoJsonTlichoBoundaryLayer, {
+                            paddingTopLeft: [500, 30],
+                        });
+                    }
                 });
 
                 // Only activate mousewheel scrolling on focus
