@@ -1,7 +1,7 @@
 # Changelog for ReframeBrain
 
 ## ReframeBrain 0.2.0
-Released on ...
+Released on October 28, 2024
 
 New features:
 - Add StoryBook functionality

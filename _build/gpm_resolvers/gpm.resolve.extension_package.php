@@ -25,6 +25,8 @@ if ($object->xpdo) {
 
             if ($modx instanceof modX) {
                 $modx->addExtensionPackage('reframebrain', $modelPath, array (
+  'serviceName' => 'reframebrain',
+  'serviceClass' => 'ReframeBrain',
 ));
             }
 
