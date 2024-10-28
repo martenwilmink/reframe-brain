@@ -33,6 +33,20 @@
     <main id="main" role="main">
         <div id="storymap" style="position:fixed;width:100vw;height:100vh;"></div>
 
+        [[cbGetFieldContent?
+            &field=`100011`
+            &outputSeparator=`,`
+            &toPlaceholder=`places`
+        ]]
+
+        [[migxLoopCollection?
+            &packageName=`reframebrain`
+            &classname=`reframePlace`
+            &where=`[{"id:IN":[ [[+places]] ]}]`
+            &joins=`[{"alias": "Location"}]`
+            &tpl=`reframeStoryMapChapterJS`
+            &toPlaceholder=`rows`
+        ]]
         <script>
             window.addEventListener('DOMContentLoaded', function() {
                 const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap<\/a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox<\/a>';
@@ -74,14 +88,8 @@
                     layers: [tilesTerrain]
                 });
 
-                // Load layers with GeoJSON data
-                [[migxLoopCollection?
-                    &packageName=`reframebrain`
-                    &classname=`reframePlace`
-                    &where=`[{"id:IN":[ 1,2,3,4 ]}]`
-                    &joins=`[{"alias": "Location"}]`
-                    &tpl=`reframeStoryMapChapterJS`
-                ]]
+                // Load markers with Places
+                [[+rows]]
 
                 // Add all layers to map
                 //map.addLayer(mapLayers);
