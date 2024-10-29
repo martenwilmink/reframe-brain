@@ -1,0 +1,32 @@
+{
+    "package": {
+        "elements": {
+            "tvs": [
+                {
+                    "caption": "Places",
+                    "name": "reframe_places",
+                    "description": "A list of locations that could be attached to a Chapter.",
+                    "type": "migxdb",
+                    "category": "Connexions",
+                    "sortOrder": 1,
+                    "inputProperties": {
+                        "configs": "reframe_places:reframebrain"
+                    },
+                    "templates": [
+                        "ReframeStoryMap"
+                    ]
+                }
+            ],
+            "categories": [
+                {
+                    "name": "M0_storymap",
+                    "parent": "M0_electrons"
+                },{
+                    "name": "Connexions",
+                    "parent": "M0_storymap",
+                    "rank": 300
+                }
+            ]
+        }
+    }
+}

@@ -1,5 +1,11 @@
 # Changelog for ReframeBrain
 
+## ReframeBrain 0.2.1
+Released on ...
+
+Fixes and improvements:
+- Add TV to manage Places inside StoryMap resource
+
 ## ReframeBrain 0.2.0
 Released on October 28, 2024
 

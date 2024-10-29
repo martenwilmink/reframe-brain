@@ -6,7 +6,22 @@
     "version": "0.2.0",
     "package": {
         "elements": {
-            "tvs": [],
+            "tvs": [
+                {
+                    "caption": "Places",
+                    "name": "reframe_places",
+                    "description": "A list of locations that could be attached to a Chapter.",
+                    "type": "migxdb",
+                    "category": "Connexions",
+                    "sortOrder": 1,
+                    "inputProperties": {
+                        "configs": "reframe_places:reframebrain"
+                    },
+                    "templates": [
+                        "ReframeStoryMap"
+                    ]
+                }
+            ],
             "chunks": [
                 {
                     "name": "migxReframeGridImage",
@@ -137,6 +152,15 @@
                 },
                 {
                     "name": "M7_computations"
+                },
+                {
+                    "name": "M0_storymap",
+                    "parent": "M0_electrons"
+                },
+                {
+                    "name": "Connexions",
+                    "parent": "M0_storymap",
+                    "rank": 300
                 },
                 {
                     "name": "M1_contentblocks",
