@@ -9,15 +9,6 @@
         &then=`$headTheme`
         &else=`$head`
     ]]]]
-    <style>
-        .ui.vertical.stripe.segment.white {
-            background-color: rgba(255, 255, 255, 0.5);
-            transition: background-color .3s ease-in-out;
-        }
-        .ui.vertical.stripe.segment.white.active {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-    </style>
 </head>
 
 <body id="[[*alias]]" class="overview storymap">
@@ -26,16 +17,17 @@
 
 <div class="pusher">
     <header id="header" class="masthead without hero [[++navbar_sticky:eq=`0`:then=`non-stick`]]">
-        [[[[If?
-            &subject=`[[$mainNavTheme]]`
-            &operator=`isnull`
-            &then=`$mainNav`
-            &else=`$mainNavTheme`
+        [[[[modifiedIf?
+            &subject=`mainNavTheme`
+            &operator=`iselement`
+            &operand=`chunk`
+            &then=`$mainNavTheme`
+            &else=`$mainNav`
         ]]]]
     </header>
 
     <main id="main" role="main">
-        <div id="storymap" style="position:fixed;width:100vw;height:100vh;"></div>
+        <div id="storymap"></div>
 
         [[cbGetFieldContent?
             &field=`100011`
