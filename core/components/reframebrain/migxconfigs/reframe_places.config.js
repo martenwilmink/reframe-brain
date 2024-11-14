@@ -905,7 +905,7 @@
             "renderer": "this.renderChunk",
             "clickaction": "",
             "selectorconfig": "",
-            "renderchunktpl": "[[+Location_lat:notempty=`<i class=\"right icon icon-fw icon-map-marker\" title=\"[[+Location_lat]], [[+Location_lng]]\" style=\"margin-top:4px;\"><\/i>`]][[+Address_locality:append=`[[+Address_region:notempty=`<br>`]]`]][[+Address_region]]",
+            "renderchunktpl": "[[+Address_locality:append=`[[+Address_region:notempty=`, `]]`]][[+Address_region]]<span style=\"float:right;\">[[$migxGridLocation? &uid=`source_[[+id]]`]]<\/span>",
             "renderoptions": "",
             "editor": ""
         },
