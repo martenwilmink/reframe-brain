@@ -3,10 +3,20 @@
         "elements": {
             "chunks": [
                 {
+                    "name": "reframeMapJS",
+                    "file": "m2_molecules/m2_map/reframemapjs.chunk.js",
+                    "category": "M2_map"
+                },{
                     "name": "reframeMapLayerJS",
+                    "file": "m2_molecules/m2_map/reframemaplayerjs.chunk.js",
+                    "category": "M2_map"
+                },{
+                    "name": "reframeStoryMapJS",
+                    "file": "m2_molecules/m2_map/reframestorymapjs.chunk.js",
                     "category": "M2_map"
                 },{
                     "name": "reframeStoryMapChapterJS",
+                    "file": "m2_molecules/m2_map/reframestorymapchapterjs.chunk.js",
                     "category": "M2_map"
                 }
             ],

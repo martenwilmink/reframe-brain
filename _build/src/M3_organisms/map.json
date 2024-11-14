@@ -5,6 +5,10 @@
                 {
                     "name": "reframeMap",
                     "category": "M3_map"
+                },
+                {
+                    "name": "reframeStoryMap",
+                    "category": "M3_map"
                 }
             ],
 
