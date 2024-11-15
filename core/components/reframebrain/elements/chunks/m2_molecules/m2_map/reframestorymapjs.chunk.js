@@ -79,6 +79,11 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Remove initial class from content after hovering
+    $('#content').hover(function () {
+        $(this).removeClass('initial');
+    })
+
     // Only activate mousewheel scrolling on focus
     // map.on('focus', function () {
     //     map.scrollWheelZoom.enable();

@@ -29,7 +29,7 @@
     <main id="main" role="main">
         [[$reframeStoryMap]]
 
-        <article id="content">
+        <article id="content" class="initial">
             [[*content]]
         </article>
 
