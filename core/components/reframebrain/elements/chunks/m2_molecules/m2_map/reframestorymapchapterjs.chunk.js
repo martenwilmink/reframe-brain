@@ -9,7 +9,8 @@ marker_[[+id]] = L.marker([ [[+Location_lat]], [[+Location_lng]] ]).addTo(map);
 
 $('#chapter-[[+id]]').visibility({
     once: false,
-    onBottomVisible: function () {
+    offset: 130,
+    onTopPassed: function () {
         if (geoJSON_[[+id]] !== null) {
             map.flyToBounds(geoJSON_[[+id]].getBounds(), [[+Location_zoom:default=`14`]]);
         } else {
@@ -17,7 +18,14 @@ $('#chapter-[[+id]]').visibility({
         }
         $(this).addClass('active');
     },
-    onTopVisibleReverse: function () {
+    onBottomPassedReverse: function () {
+        if (geoJSON_[[+id]] !== null) {
+            map.flyToBounds(geoJSON_[[+id]].getBounds(), [[+Location_zoom:default=`14`]]);
+        } else {
+            map.flyTo([ [[+Location_lat]], [[+Location_lng]] ], [[+Location_zoom:default=`14`]]);
+        }
+    },
+    onTopPassedReverse: function () {
         $(this).removeClass('active');
     }
 });

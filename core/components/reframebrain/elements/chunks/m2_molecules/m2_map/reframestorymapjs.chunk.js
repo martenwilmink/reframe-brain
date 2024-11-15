@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', function() {
         paddingBottomRight: [50, 200],
     });
 
-    // Scrollytelling
+    // Start scrollytelling
     $('#chapter-0').visibility({
         once: false,
         onBottomVisible: function () {
