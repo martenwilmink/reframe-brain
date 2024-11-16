@@ -26,6 +26,11 @@ window.addEventListener('DOMContentLoaded', function() {
         "Satellite": tilesSatellite
     }
 
+    let markers = L.markerClusterGroup.layerSupport({
+        maxClusterRadius: 50,
+        singleMarkerMode: false,
+        disableClusteringAtZoom: 10
+    });
     let mapLayers = {};
     let primaryLayer = '';
     let markersById = [];
@@ -42,18 +47,7 @@ window.addEventListener('DOMContentLoaded', function() {
     [[+rows]]
 
     // Load additional map layers
-    let geoJsonTlichoBoundary = [[$geoJSON_tlicho_boundary:strip]];
-    let geoJsonTlichoBoundaryLayer = L.geoJson(geoJsonTlichoBoundary, {
-        style: function() {
-            return {
-                color: '#3388ff',
-                weight: 2,
-                fill: false,
-                dashArray: '0 3',
-            }
-        }
-    });
-    mapLayers[ "Tlicho boundary" ] = geoJsonTlichoBoundaryLayer;
+    [[+layers]]
 
     // Add selector to switch between layers
     let layerControl = L.control.layers(tileLayers, mapLayers, {
@@ -61,7 +55,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }).addTo(map);
 
     // Add all layers to map
-    //map.addLayer(mapLayers);
+    map.addLayer(markers);
 
     // Adjust map boundaries to first layer
     map.fitBounds(map.getBounds(), {
@@ -73,9 +67,7 @@ window.addEventListener('DOMContentLoaded', function() {
     $('#chapter-0').visibility({
         once: false,
         onBottomVisible: function () {
-            map.flyToBounds(geoJsonTlichoBoundaryLayer, {
-                paddingTopLeft: [500, 30],
-            });
+            map.flyToBounds(primaryLayer);
         }
     });
 

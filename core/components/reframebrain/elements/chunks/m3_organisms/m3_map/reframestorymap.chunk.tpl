@@ -11,6 +11,12 @@
     &tpl=`reframeStoryMapChapterJS`
     &toPlaceholder=`rows`
 ]]
+[[cbGetFieldContent?
+    &field=`100001`
+    &wrapTpl=`rawRows`
+    &tpl=`reframeMapLayerJS`
+    &toPlaceholder=`layers`
+]]
 
 <div id="storymap"></div>
 

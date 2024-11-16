@@ -22,12 +22,17 @@ let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
 
 mapLayers[ "[[+layer_title]]" ] = [[+title_[[+idx]]]]Layer;
 
-[[+show_on_load:eq=`1`:then=`
-markers.addLayer([[+title_[[+idx]]]]Layer);
-`:else=`
-markers.checkIn([[+title_[[+idx]]]]Layer);
-`]]
+[[If?
+    &subject=`[[+show_on_load]]`
+    &operator=`eq`
+    &operand=`1`
+    &then=`markers.addLayer([[+title_[[+idx]]]]Layer);`
+    &else=`markers.checkIn([[+title_[[+idx]]]]Layer);`
+]]
 
-[[+idx:eq=`1`:then=`
-primaryLayer = [[+title_[[+idx]]]]Layer;
-`]]
+[[If?
+    &subject=`[[+idx]]`
+    &operator=`eq`
+    &operand=`1`
+    &then=`primaryLayer = [[+title_[[+idx]]]]Layer;`
+]]
