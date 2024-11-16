@@ -58,9 +58,15 @@ window.addEventListener('DOMContentLoaded', function() {
     map.addLayer(markers);
 
     // Adjust map boundaries to first layer
-    map.fitBounds(map.getBounds(), {
-        paddingTopLeft: [300, 50],
-        paddingBottomRight: [50, 200],
+    map.fitBounds(primaryLayer.getBounds());
+
+    // Offset map center to accommodate content overlay
+    map.setActiveArea({
+        position: 'absolute',
+        top: '0',
+        left: '40vw',
+        right: '0',
+        height: '100vh'
     });
 
     // Start scrollytelling

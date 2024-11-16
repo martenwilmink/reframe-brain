@@ -4,13 +4,17 @@
 Released on ...
 
 Fixes and improvements:
+- Offset storymap center to accommodate content overlay
+- Load storymap background layers with CB field
+- Avoid storymap content being hidden on init
+- Improve storymap scrolling and mobile behaviour
 - Add TV to manage Places inside StoryMap resource
 
 ## ReframeBrain 0.2.0
 Released on October 28, 2024
 
 New features:
-- Add StoryBook functionality
+- Add StoryMap functionality
 - Add ReframeBrain namespace and base class
 - Add database tables for Stories and Places
 - Add ability to cluster markers on map
