@@ -49,8 +49,15 @@ window.addEventListener('DOMContentLoaded', function() {
     // Load additional map layers
     [[+layers]]
 
+    // Add scale indication
+    L.control.scale({
+        imperial: false,
+        updateWhenIdle: true,
+        position: 'bottomright'
+    }).addTo(map);
+
     // Add selector to switch between layers
-    let layerControl = L.control.layers(tileLayers, mapLayers, {
+    L.control.layers(tileLayers, mapLayers, {
         position: 'bottomright'
     }).addTo(map);
 
