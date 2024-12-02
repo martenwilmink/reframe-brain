@@ -1,4 +1,52 @@
 window.addEventListener('DOMContentLoaded', function() {
+    function flyToPlace (chapter, lat, lng, zoom, geoJSON)
+    {
+        let location = null;
+        if (geoJSON !== null) {
+            location = L.geoJSON(geoJSON).addTo(map);
+        } else {
+            location = L.marker([ lat, lng ]).addTo(map);
+        }
+
+        function comeFlyWithMe () {
+            if (geoJSON !== null) {
+                map.flyToBounds(location.getBounds(), zoom);
+            } else {
+                map.flyTo([ lat, lng ], zoom);
+            }
+        }
+
+        location.on('click', function() {
+            let offset = 30;
+
+            if (chapter.length) {
+                $('[id*=chapter-]').visibility('disable callbacks');
+                $('html, body').scrollTop(chapter.offset().top - offset);
+
+                comeFlyWithMe();
+
+                map.once('zoomend', function () {
+                    $('[id*=chapter-]').visibility('enable callbacks');
+                });
+            }
+        });
+
+        chapter.visibility({
+            once: false,
+            offset: 130,
+            onTopPassed: function () {
+                comeFlyWithMe();
+                $(this).addClass('active');
+            },
+            onBottomPassedReverse: function () {
+                comeFlyWithMe();
+            },
+            onTopPassedReverse: function () {
+                $(this).removeClass('active');
+            }
+        });
+    }
+
     const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap<\/a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox<\/a>';
 
     // Load tile layers
