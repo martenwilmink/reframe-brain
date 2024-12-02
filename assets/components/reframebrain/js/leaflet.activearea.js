@@ -1,3 +1,8 @@
+/**
+ * @author Grégory Paul
+ * @license Apache 2.0
+ * @see https://github.com/Mappy/Leaflet-active-area
+ */
 (function(previousMethods){
     if (typeof previousMethods === 'undefined') {
         // Defining previously that object allows you to use that plugin even if you have overridden L.map
