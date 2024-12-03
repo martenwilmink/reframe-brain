@@ -1,4 +1,5 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function()
+{
     function flyToPlace (chapter, lat, lng, zoom, geoJSON)
     {
         let location = null;
