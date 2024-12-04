@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', function()
 {
-    function flyToPlace (chapter, lat, lng, zoom, geoJSON)
+    function flyToPlace (id, { lat = null, lng = null, zoom = 14, geoJSON = null })
     {
+        const chapter = $('#chapter-'+id);
+
         let location = null;
         if (geoJSON !== null) {
             location = L.geoJSON(geoJSON).addTo(map);
@@ -21,11 +23,13 @@ window.addEventListener('DOMContentLoaded', function()
             let offset = 30;
 
             if (chapter.length) {
+                // Avoid interference from scroll position behaviour
                 $('[id*=chapter-]').visibility('disable callbacks');
                 $('html, body').scrollTop(chapter.offset().top - offset);
 
                 comeFlyWithMe();
 
+                // Allow scrolling again after reaching destination
                 map.once('zoomend', function () {
                     $('[id*=chapter-]').visibility('enable callbacks');
                 });
