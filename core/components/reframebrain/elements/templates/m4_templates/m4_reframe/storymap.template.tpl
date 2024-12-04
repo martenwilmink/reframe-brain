@@ -30,7 +30,7 @@
         [[$reframeStoryMap]]
 
         <article id="content" class="initial">
-            [[*content]]
+            [[$content]]
         </article>
 
         [[[[If?
