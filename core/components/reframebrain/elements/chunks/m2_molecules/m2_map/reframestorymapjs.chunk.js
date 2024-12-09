@@ -93,6 +93,7 @@ window.addEventListener('DOMContentLoaded', function()
         center: [64.111875, -117.320659],
         zoom: 8,
         scrollWheelZoom: true,
+        zoomControl: false, //added below, with alternative positioning
         layers: [tilesTerrain]
     });
 
@@ -102,15 +103,18 @@ window.addEventListener('DOMContentLoaded', function()
     // Load additional map layers
     [[+layers]]
 
-    // Add scale indication
+    // Add controls
     L.control.scale({
         imperial: false,
         updateWhenIdle: true,
         position: 'bottomright'
     }).addTo(map);
 
-    // Add selector to switch between layers
     L.control.layers(tileLayers, mapLayers, {
+        position: 'bottomright'
+    }).addTo(map);
+
+    L.control.zoom({
         position: 'bottomright'
     }).addTo(map);
 
