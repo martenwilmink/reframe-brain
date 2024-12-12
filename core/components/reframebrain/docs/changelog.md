@@ -7,6 +7,7 @@ New features:
 - Add ability to customize map markers
 
 Fixes and improvements:
+- Include NPM assets and associated Gulp tasks
 - Add ability to click on marker to zoom in
 - Offset storymap center to accommodate content overlay
 - Load storymap background layers with CB field

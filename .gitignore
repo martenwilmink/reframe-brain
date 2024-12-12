@@ -1,12 +1,11 @@
 _build/build.config.php
-_build/node_modules/
 config.core.php
 
 _packages/*.*
 !_packages/.gitignore
 !_packages/*.zip
 
-_data/
+node_modules/
 
 assets/components/*/vendor/
 core/components/*/vendor/
