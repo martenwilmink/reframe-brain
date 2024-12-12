@@ -9,10 +9,12 @@
     &component=`custom`
     &css=`[
         "https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css",
-        "https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
+        "https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css",
+        "assets/components/reframebrain/css/leaflet.extra-markers.min.css"
     ]`
     &js=`[
         "https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js",
-        "https://unpkg.com/leaflet.markercluster.layersupport@2.0.1/dist/leaflet.markercluster.layersupport.js"
+        "https://unpkg.com/leaflet.markercluster.layersupport@2.0.1/dist/leaflet.markercluster.layersupport.js",
+        "assets/components/reframebrain/js/leaflet.extra-markers.js"
     ]`
 ]]

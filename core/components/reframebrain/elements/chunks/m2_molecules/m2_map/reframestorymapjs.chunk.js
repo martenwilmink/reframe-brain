@@ -3,12 +3,19 @@ window.addEventListener('DOMContentLoaded', function()
     function flyToPlace (id, { lat = null, lng = null, zoom = 14, geoJSON = null })
     {
         const chapter = $('#chapter-'+id);
+        const iconMarker = L.ExtraMarkers.icon({
+            icon: 'coffee',
+            markerColor: 'red',
+            shape: 'circle',
+            prefix: 'icon',
+            svg: true
+        });
 
         let location = null;
         if (geoJSON !== null) {
             location = L.geoJSON(geoJSON).addTo(map);
         } else {
-            location = L.marker([ lat, lng ]).addTo(map);
+            location = L.marker([ lat, lng ], {icon: iconMarker}).addTo(map);
         }
 
         function comeFlyWithMe () {

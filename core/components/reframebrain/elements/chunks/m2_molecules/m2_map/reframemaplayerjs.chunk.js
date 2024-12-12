@@ -3,7 +3,15 @@
 let geoJson[[+title_[[+idx]]]] = [[+layer_geojson:empty=`[]`]];
 let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
     pointToLayer: function(feature, latlng) {
-        return L.marker(latlng);
+        return L.marker(latlng, {
+            icon: L.ExtraMarkers.icon({
+                icon: 'coffee',
+                markerColor: 'red',
+                shape: 'circle',
+                prefix: 'icon',
+                svg: true
+            })
+        });
     },
     style: function() {
         return {

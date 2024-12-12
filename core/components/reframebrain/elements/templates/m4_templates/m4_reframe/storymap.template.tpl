@@ -50,8 +50,6 @@
     ]]]]
 </div>
 
-[[loadAssets? &component=`map`]]
-[[loadAssets? &component=`table`]]
 [[$script]]
 
 </body>
