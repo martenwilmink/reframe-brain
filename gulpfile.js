@@ -36,3 +36,5 @@ gulp.task('minify', function (done) {
   ;
   done();
 });
+
+gulp.task('default', gulp.series('copy', 'minify'));
