@@ -5,8 +5,8 @@ let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
     pointToLayer: function(feature, latlng) {
         return L.marker(latlng, {
             icon: L.ExtraMarkers.icon({
-                icon: 'coffee',
-                markerColor: 'red',
+                icon: 'marker',
+                markerColor: '[[+layer_color:stripString=`#fafafa`:default=`#3388ff`]]',
                 shape: 'circle',
                 prefix: 'icon',
                 svg: true

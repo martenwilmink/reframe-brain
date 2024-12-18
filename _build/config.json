@@ -44,6 +44,10 @@
                     "category": "M1_image"
                 },
                 {
+                    "name": "mgrStoryMapUI",
+                    "category": "M2_global"
+                },
+                {
                     "name": "reframeMapJS",
                     "file": "m2_molecules\/m2_map\/reframemapjs.chunk.js",
                     "category": "M2_map"
@@ -216,6 +220,10 @@
                 },
                 {
                     "name": "M2_event",
+                    "parent": "M2_molecules"
+                },
+                {
+                    "name": "M2_global",
                     "parent": "M2_molecules"
                 },
                 {

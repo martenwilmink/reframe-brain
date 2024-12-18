@@ -1,0 +1,19 @@
+{
+    "package": {
+        "elements": {
+            "chunks": [
+                {
+                    "name": "mgrStoryMapUI",
+                    "category": "M2_global"
+                }
+            ],
+
+            "categories": [
+                {
+                    "name": "M2_global",
+                    "parent": "M2_molecules"
+                }
+            ]
+        }
+    }
+}
