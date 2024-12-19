@@ -22,11 +22,6 @@ $modx->controller->addLexiconTopic('reframebrain:manager');
 switch ($modx->event->name) {
     case 'OnManagerPageBeforeRender':
 
-//        $controller->addHtml($modx->getChunk('mgrStoryMapUI', [
-//            'settings' => $settings ?? '',
-//            'fields' => $fields ?? '',
-//        ]));
-
         break;
 
     case 'OnManagerPageAfterRender':
@@ -37,21 +32,11 @@ switch ($modx->event->name) {
         $dom = new HtmlPageCrawler($output);
 
         // Do your thing
-        $dom->filter('#tv100001_items')
-            ->addClass('hoi')
-        ;
-
         $dom->filter('head')
-            ->append($modx->getChunk('mgrStoryMapUI', [
-                'settings' => $settings ?? '',
-                'fields' => $fields ?? '',
-            ])
+            ->append($modx->getChunk('mgrStoryMapUI')
         );
 
         $controller->content = $dom->saveHTML();
-
-        //$modx->regClientCSS('/HACKERMAN/');
-        //$modx->log(modX::LOG_LEVEL_ERROR, $CB);
 
         break;
 }
