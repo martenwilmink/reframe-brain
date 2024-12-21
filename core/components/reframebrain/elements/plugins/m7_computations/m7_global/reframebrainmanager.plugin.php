@@ -20,10 +20,6 @@ use \Wa72\HtmlPageDom\HtmlPageCrawler;
 $modx->controller->addLexiconTopic('reframebrain:manager');
 
 switch ($modx->event->name) {
-    case 'OnManagerPageBeforeRender':
-
-        break;
-
     case 'OnManagerPageAfterRender':
         // Get processed output of resource
         $output = $modx->controller->content;

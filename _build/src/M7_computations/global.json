@@ -9,7 +9,12 @@
                 },{
                     "name": "ReframeBrainManager",
                     "category": "M7_global",
-                    "events": ["OnDocFormRender","OnManagerPageBeforeRender","OnManagerPageAfterRender"]
+                    "events": [
+                        {
+                            "event": "OnManagerPageAfterRender",
+                            "priority": 30
+                        }
+                    ]
                 }
             ],
             "categories": [
