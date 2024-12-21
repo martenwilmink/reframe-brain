@@ -1,22 +1,9 @@
-import gulp, {series} from 'gulp';
-import less from 'gulp-less';
-import autoprefixer from 'gulp-autoprefixer';
-import concat from 'gulp-concat';
-import cleanCSS from 'gulp-clean-css';
-import uglify from 'gulp-uglify';
-import rename from 'gulp-rename';
-import {watch} from "gulp";
-
-// Build custom CSS/JS elements
-gulp.task('build', function (done) {
-  gulp.src('./assets/components/reframebrain/css/contentblocks.less')
-      .pipe(less())
-      .pipe(autoprefixer())
-      .pipe(concat('contentblocks.css'))
-      .pipe(gulp.dest('./assets/components/reframebrain/css/'))
-  ;
-  done();
-});
+const
+  gulp = require('gulp'),
+  minify = require('gulp-clean-css'),
+  uglify = require('gulp-uglify'),
+  rename = require('gulp-rename')
+;
 
 // Copy NPM assets
 gulp.task('copy', function (done) {
@@ -38,7 +25,7 @@ gulp.task('copy', function (done) {
 // Minify CSS/JS elements
 gulp.task('minify', function (done) {
   gulp.src(['*.css','!*.min.css'], {cwd: './assets/components/reframebrain/css'})
-    .pipe(cleanCSS({inline: ['local', 'remote', '!fonts.googleapis.com']}))
+    .pipe(minify({inline: ['local', 'remote', '!fonts.googleapis.com']}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./assets/components/reframebrain/css'))
   ;
@@ -50,9 +37,4 @@ gulp.task('minify', function (done) {
   done();
 });
 
-gulp.task('watch', function (cb) {
-  watch('./assets/components/reframebrain/css/*.less', series('build','copy','minify'));
-});
-
-gulp.task('build', gulp.series('build', 'copy', 'minify'));
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', gulp.series('copy', 'minify'));
