@@ -8,13 +8,13 @@
 [[loadAssets?
     &component=`custom`
     &css=`[
-        "https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css",
-        "https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css",
-        "assets/components/reframebrain/css/leaflet.extra-markers.min.css"
+        "assets/components/reframebrain/css/MarkerCluster[[+minify]][[+cache_buster_css:empty=``]].css",
+        "assets/components/reframebrain/css/MarkerCluster.Default[[+minify]][[+cache_buster_css:empty=``]].css",
+        "assets/components/reframebrain/css/leaflet.extra-markers[[+minify]][[+cache_buster_css:empty=``]].css"
     ]`
     &js=`[
-        "https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js",
-        "https://unpkg.com/leaflet.markercluster.layersupport@2.0.1/dist/leaflet.markercluster.layersupport.js",
-        "assets/components/reframebrain/js/leaflet.extra-markers.js"
+        "assets/components/reframebrain/js/leaflet.markercluster-src[[+minify]][[+cache_buster_js:empty=``]].js",
+        "assets/components/reframebrain/js/leaflet.markercluster.layersupport[[+minify]][[+cache_buster_js:empty=``]].js",
+        "assets/components/reframebrain/js/leaflet.extra-markers[[+minify]][[+cache_buster_js:empty=``]].js"
     ]`
 ]]

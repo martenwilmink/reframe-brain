@@ -8,7 +8,7 @@ import rename from 'gulp-rename';
 import {watch} from "gulp";
 
 // Build custom CSS/JS elements
-gulp.task('build', function (done) {
+gulp.task('build-custom', function (done) {
   gulp.src('./assets/components/reframebrain/css/contentblocks.less')
       .pipe(less())
       .pipe(autoprefixer())
@@ -28,6 +28,15 @@ gulp.task('copy', function (done) {
   ;
   gulp.src('./node_modules/leaflet-extra-markers/dist/img/*.png', {encoding: false})
     .pipe(gulp.dest('./assets/components/reframebrain/img'))
+  ;
+  gulp.src('./node_modules/leaflet.markercluster/dist/*.css')
+    .pipe(gulp.dest('./assets/components/reframebrain/css'))
+  ;
+  gulp.src('./node_modules/leaflet.markercluster/dist/*.js')
+    .pipe(gulp.dest('./assets/components/reframebrain/js'))
+  ;
+  gulp.src('./node_modules/leaflet.markercluster.layersupport/dist/*.js')
+    .pipe(gulp.dest('./assets/components/reframebrain/js'))
   ;
   gulp.src('./node_modules/leaflet-active-area/src/leaflet.activearea.js')
     .pipe(gulp.dest('./assets/components/reframebrain/js'))
@@ -51,8 +60,8 @@ gulp.task('minify', function (done) {
 });
 
 gulp.task('watch', function (cb) {
-  watch('./assets/components/reframebrain/css/*.less', series('build','copy','minify'));
+  watch('./assets/components/reframebrain/css/*.less', series('build-custom','copy','minify'));
 });
 
-gulp.task('build', gulp.series('build', 'copy', 'minify'));
+gulp.task('build', gulp.series('build-custom', 'copy', 'minify'));
 gulp.task('default', gulp.series('watch'));
