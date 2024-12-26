@@ -110,6 +110,10 @@
                     "category": "M6_map"
                 },
                 {
+                    "name": "cbGetLayoutSettings",
+                    "category": "M6_map"
+                },
+                {
                     "name": "setBoxTypeTheme",
                     "category": "M6_theme"
                 }

@@ -1,13 +1,10 @@
-[[cbGetFieldContent?
+[[-cbGetFieldContent?
     &field=`100011`
     &outputSeparator=`,`
     &toPlaceholder=`places`
 ]]
-[[migxLoopCollection?
-    &packageName=`reframebrain`
-    &classname=`reframePlace`
-    &where=`[{"id:IN":[ [[+places]] ]}]`
-    &joins=`[{"alias": "Location"}]`
+[[cbGetLayoutSettings?
+    &layout=`100001`
     &tpl=`reframeStoryMapChapterJS`
     &toPlaceholder=`rows`
 ]]

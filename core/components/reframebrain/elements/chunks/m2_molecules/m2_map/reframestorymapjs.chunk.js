@@ -1,11 +1,18 @@
 window.addEventListener('DOMContentLoaded', function()
 {
-    function flyToPlace (id, { lat = null, lng = null, zoom = 14, geoJSON = null })
+    function flyToPlace (id, {
+        lat = null,
+        lng = null,
+        zoom = 14,
+        geoJSON = null,
+        markerIcon = 'marker',
+        markerColor = 'blue',
+    })
     {
         const chapter = $('#chapter-'+id);
         const iconMarker = L.ExtraMarkers.icon({
-            icon: 'coffee',
-            markerColor: 'red',
+            icon: markerIcon,
+            markerColor: markerColor,
             shape: 'circle',
             prefix: 'icon',
             svg: true

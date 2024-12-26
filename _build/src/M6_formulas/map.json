@@ -5,6 +5,10 @@
                 {
                     "name": "cbDropdownOptionsPlace",
                     "category": "M6_map"
+                },
+                {
+                    "name": "cbGetLayoutSettings",
+                    "category": "M6_map"
                 }
             ],
 
