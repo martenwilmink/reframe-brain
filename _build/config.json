@@ -331,14 +331,14 @@
                 "handler": ""
             },
             {
-                "text": "Stories",
+                "text": "Places",
                 "description": "",
                 "action": "index",
                 "namespace": "migx",
                 "parent": "Reframe",
                 "icon": "",
                 "menuIndex": 30,
-                "params": "&configs=reframe_stories:reframebrain||reframe_places:reframebrain",
+                "params": "&configs=reframe_places:reframebrain",
                 "handler": ""
             },
             {

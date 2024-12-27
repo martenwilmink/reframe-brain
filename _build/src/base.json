@@ -48,14 +48,14 @@
                 "params": "",
                 "handler": ""
             },{
-                "text": "Stories",
+                "text": "Places",
                 "description": "",
                 "action": "index",
                 "namespace": "migx",
                 "parent": "Reframe",
                 "icon": "",
                 "menuIndex": 30,
-                "params": "&configs=reframe_stories:reframebrain||reframe_places:reframebrain",
+                "params": "&configs=reframe_places:reframebrain",
                 "handler": ""
             },{
                 "text": "reframebrain.menu.clear_cache_maps_title",
