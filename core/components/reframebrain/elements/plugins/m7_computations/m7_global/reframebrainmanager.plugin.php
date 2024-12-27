@@ -21,16 +21,22 @@ $modx->controller->addLexiconTopic('reframebrain:manager');
 
 switch ($modx->event->name) {
     case 'OnManagerPageAfterRender':
+        // Abort if not editing a resource
+        if (!($modx->resource instanceof modResource)) break;
+
         // Get processed output of resource
         $output = $modx->controller->content;
 
         // Feed output to HtmlPageDom
         $dom = new HtmlPageCrawler($output);
 
-        // Do your thing
-        $dom->filter('head')
-            ->append($modx->getChunk('mgrStoryMapUI')
-        );
+        // Target StoryMap pages specifically
+        if ($modx->resource->get('template') == 100002)
+        {
+            $dom->filter('head')
+                ->append($modx->getChunk('mgrStoryMapUI')
+            );
+        }
 
         $controller->content = $dom->saveHTML();
 
