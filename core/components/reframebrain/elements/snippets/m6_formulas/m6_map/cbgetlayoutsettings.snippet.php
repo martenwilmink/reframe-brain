@@ -52,13 +52,26 @@ foreach ($layouts as $layout) {
     if ($layout['layout'] != $layoutID) continue;
     if (!$placeID = $layout['settings']['place_id'] ?? false) continue;
 
+    //$modx->log(modX::LOG_LEVEL_ERROR, print_r($layout['settings'], true));
+
     $place = $modx->getObject('reframePlace', ['id' => $placeID]);
     $location = $place->getOne('Location');
+
+    // Unset falsy settings
+    if ($layout['settings']['marker_color'] == '#fafafa') {
+        unset($layout['settings']['marker_color']);
+    }
+    if ($layout['settings']['marker_icon'] == '') {
+        unset($layout['settings']['marker_icon']);
+    }
+    if ($layout['settings']['zoom_level'] == '') {
+        unset($layout['settings']['zoom_level']);
+    }
 
     // Convert GeoJSON array back to JSON
     $geoJSON = $location->get('geojson') ?? false;
     if ($geoJSON) {
-        $geoJSON = json_encode($location->get('geojson'));
+        $geoJSON = json_encode($geoJSON);
     }
 
     $output[] = $modx->getChunk($tpl, [
