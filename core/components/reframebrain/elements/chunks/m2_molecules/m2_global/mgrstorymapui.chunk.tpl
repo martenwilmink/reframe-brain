@@ -14,8 +14,8 @@
             $('#contentblocks').arrive('.contentblocks-layout[data-layout*="100001"]', {
                 existing: true,
             }, function(newElement) {
-                const $settings = $(this).find('.contentblocks-region-settings');
-                const $target = $(this).find('.contentblocks-region-last');
+                const $settings = $(this).find('> .contentblocks-region-container > .contentblocks-region-settings');
+                const $target = $(this).find('> .contentblocks-region-container > .contentblocks-region-content > .contentblocks-region-last');
 
                 // Move content settings into the right layout column
                 $target.find('> *').hide();

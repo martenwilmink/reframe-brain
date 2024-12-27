@@ -20,15 +20,18 @@
 }
 
 .contentblocks-layout[data-layout*="100001"] {
-    .contentblocks-region-last {
-        background: #f5f5f5;
-    }
-    .contentblocks-region-settings {
-        background: none;
-        border-bottom: none;
+    > .contentblocks-region-container > .contentblocks-region-content {
+        > .contentblocks-region-last {
+            background: #f5f5f5;
 
-        .contentblocks-exposed-fields-wrapper {
-            padding: 0 5%;
+            > .contentblocks-region-settings {
+                background: none;
+                border-bottom: none;
+
+                .contentblocks-exposed-fields-wrapper {
+                    padding: 0 5%;
+                }
+            }
         }
     }
 }

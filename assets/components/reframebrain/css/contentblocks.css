@@ -17,13 +17,13 @@
     width: 100% !important;
   }
 }
-.contentblocks-layout[data-layout*="100001"] .contentblocks-region-last {
+.contentblocks-layout[data-layout*="100001"] > .contentblocks-region-container > .contentblocks-region-content > .contentblocks-region-last {
   background: #f5f5f5;
 }
-.contentblocks-layout[data-layout*="100001"] .contentblocks-region-settings {
+.contentblocks-layout[data-layout*="100001"] > .contentblocks-region-container > .contentblocks-region-content > .contentblocks-region-last > .contentblocks-region-settings {
   background: none;
   border-bottom: none;
 }
-.contentblocks-layout[data-layout*="100001"] .contentblocks-region-settings .contentblocks-exposed-fields-wrapper {
+.contentblocks-layout[data-layout*="100001"] > .contentblocks-region-container > .contentblocks-region-content > .contentblocks-region-last > .contentblocks-region-settings .contentblocks-exposed-fields-wrapper {
   padding: 0 5%;
 }
