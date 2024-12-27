@@ -6,7 +6,7 @@ let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
         return L.marker(latlng, {
             icon: L.ExtraMarkers.icon({
                 icon: 'marker',
-                markerColor: '[[+layer_color:stripString=`#fafafa`:default=`#3388ff`]]',
+                markerColor: '[[+layer_color:stripString=`#fafafa`:default=`#[[++theme_color_primary]]`]]',
                 shape: 'circle',
                 prefix: 'icon',
                 svg: true
@@ -15,7 +15,7 @@ let [[+title_[[+idx]]]]Layer = L.geoJson(geoJson[[+title_[[+idx]]]], {
     },
     style: function() {
         return {
-            color: '[[+layer_color:stripString=`#fafafa`:default=`#3388ff`]]',
+            color: '[[+layer_color:stripString=`#fafafa`:default=`#[[++theme_color_secondary]]`]]',
             weight: [[+line_weight:default=`3`]],
             fill: [[+layer_fill:default=`false`]],
             dashArray: [[+line_dash:default=`null`:prepend=`'`:append=`'`]],

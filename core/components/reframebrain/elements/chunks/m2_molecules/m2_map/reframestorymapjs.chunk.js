@@ -26,11 +26,15 @@ window.addEventListener('DOMContentLoaded', function()
         }
 
         function comeFlyWithMe () {
+            $('#storymap').addClass('flying');
             if (geoJSON !== null) {
                 map.flyToBounds(location.getBounds(), zoom);
             } else {
                 map.flyTo([ lat, lng ], zoom);
             }
+            map.once('zoomend', function () {
+                $('#storymap').removeClass('flying');
+            });
         }
 
         location.on('click', function() {
@@ -151,7 +155,11 @@ window.addEventListener('DOMContentLoaded', function()
     $('#chapter-0').visibility({
         once: false,
         onBottomVisible: function () {
+            $('#storymap').addClass('flying');
             map.flyToBounds(primaryLayer);
+            map.once('zoomend', function () {
+                $('#storymap').removeClass('flying');
+            });
         }
     });
 
