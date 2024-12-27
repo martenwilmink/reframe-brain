@@ -48,17 +48,18 @@ $output = [];
 $properties = $resource->get('properties');
 $layouts = json_decode($properties['contentblocks']['content'], true);
 
-//$modx->log(modX::LOG_LEVEL_ERROR, print_r($layouts, true));
-
 foreach ($layouts as $layout) {
-    //$modx->log(modX::LOG_LEVEL_ERROR, 'Layout ID: '. print_r($layout, true));
-    //$modx->log(modX::LOG_LEVEL_ERROR, 'Layout settings: '. print_r($layout['settings'], true));
-    
     if ($layout['layout'] != $layoutID) continue;
     if (!$placeID = $layout['settings']['place_id'] ?? false) continue;
 
     $place = $modx->getObject('reframePlace', ['id' => $placeID]);
     $location = $place->getOne('Location');
+
+    // Convert GeoJSON array back to JSON
+    $geoJSON = $location->get('geojson') ?? false;
+    if ($geoJSON) {
+        $geoJSON = json_encode($location->get('geojson'));
+    }
 
     $output[] = $modx->getChunk($tpl, [
         'id' => $placeID,
@@ -69,7 +70,7 @@ foreach ($layouts as $layout) {
         'Location_lat' => $location->get('lat'),
         'Location_lng' => $location->get('lng'),
         'Location_zoom' => $layout['settings']['zoom_level'] ?? $location->get('zoom'),
-        'Location_geojson' => $location->get('geojson'),
+        'Location_geojson' => $geoJSON,
     ]);
 }
 
