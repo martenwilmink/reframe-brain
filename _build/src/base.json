@@ -3,7 +3,7 @@
     "lowCaseName": "reframebrain",
     "description": "Database manager for map-based storytelling.",
     "author": "Hugo Peek",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "package": {
         "elements": {
             "tvs": [],
